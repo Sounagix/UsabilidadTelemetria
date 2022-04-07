@@ -19,10 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\IPersistence.cpp" />
+    <ClCompile Include="..\src\ITrackerAsset.cpp" />
     <ClCompile Include="..\src\Tracker.cpp" />
+    <ClCompile Include="..\src\TrackerEvent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\IPersistence.h" />
+    <ClInclude Include="..\src\ITrackerAsset.h" />
     <ClInclude Include="..\src\Tracker.h" />
+    <ClInclude Include="..\src\TrackerEvent.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

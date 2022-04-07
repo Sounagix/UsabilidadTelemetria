@@ -2,10 +2,9 @@
 
 Tracker::Tracker() {
 
-	if (instance == nullptr) {
-		instance = this;
-	}
-	else {
-		delete this;
-	}
+}
+
+Tracker Tracker::GetInstance()
+{
+	return Tracker();
 }

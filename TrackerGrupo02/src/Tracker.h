@@ -1,9 +1,15 @@
 #pragma once
+#include "IPersistence.h"
+
 class Tracker
 {
-public:
-	static Tracker* instance;
+private:
+	static Tracker instance;
 
 	Tracker();
+
+public:
+	
+	Tracker GetInstance();
 };
 

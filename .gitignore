@@ -25,6 +25,9 @@
 *.la
 *.a
 *.lib
+*.vs
+[t]TrackerGrupo02\tmp
+[t]TrackerGrupo02\lib
 
 # Executables
 *.exe
