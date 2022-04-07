@@ -23,20 +23,34 @@
     <ClCompile Include="..\src\Events\LoginZone.cpp" />
     <ClCompile Include="..\src\Events\Logout.cpp" />
     <ClCompile Include="..\src\Events\LogoutZone.cpp" />
+    <ClCompile Include="..\src\Events\OpenInv.cpp" />
     <ClCompile Include="..\src\Events\TrackerEvent.cpp" />
     <ClCompile Include="..\src\Persistance\IPersistence.cpp" />
     <ClCompile Include="..\src\Tracker.cpp" />
     <ClCompile Include="..\src\TrackerAsset\ITrackerAsset.cpp" />
+    <ClCompile Include="OpenChest.cpp" />
+    <ClCompile Include="OpenShop.cpp" />
+    <ClCompile Include="OpenSkills.cpp" />
+    <ClCompile Include="TutoTask.cpp" />
+    <ClCompile Include="UsePot.cpp" />
+    <ClCompile Include="UseSkill.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Events\Login.h" />
     <ClInclude Include="..\src\Events\LoginZone.h" />
     <ClInclude Include="..\src\Events\Logout.h" />
     <ClInclude Include="..\src\Events\LogoutZone.h" />
+    <ClInclude Include="..\src\Events\OpenInv.h" />
     <ClInclude Include="..\src\Events\TrackerEvent.h" />
     <ClInclude Include="..\src\Persistance\IPersistence.h" />
     <ClInclude Include="..\src\Tracker.h" />
     <ClInclude Include="..\src\TrackerAsset\ITrackerAsset.h" />
+    <ClInclude Include="OpenChest.h" />
+    <ClInclude Include="OpenShop.h" />
+    <ClInclude Include="OpenSkills.h" />
+    <ClInclude Include="TutoTask.h" />
+    <ClInclude Include="UsePot.h" />
+    <ClInclude Include="UseSkill.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

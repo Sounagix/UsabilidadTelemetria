@@ -5,6 +5,6 @@ class Login : public TrackerEvent
 {
 public:
 	void toJson();
-	Login(int time,string idu,string idg);
+	Login(int timeStamp,std::string idUser,std::string idGame);
 };
 

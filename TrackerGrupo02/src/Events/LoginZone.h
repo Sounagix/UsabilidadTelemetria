@@ -8,6 +8,6 @@ private:
 	bool completed;
 public:
 	void toJson();
-	LoginZone(int time, string idu, string idg,int z, bool comp);
+	LoginZone(int timeStamp, std::string idUser, std::string idGame,int z, bool comp);
 };
 

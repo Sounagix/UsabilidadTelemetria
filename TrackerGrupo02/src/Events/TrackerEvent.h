@@ -1,9 +1,6 @@
 #pragma once
 #include <iostream>
 
-using namespace std;
-
-
 enum eventype
 {
 	Login,
@@ -23,22 +20,22 @@ enum eventype
 class TrackerEvent
 {
 protected:
-	eventype ev;
-	string idUser;
-	string idGame;
-	int timestamp;
+	eventype _event;
+	std::string _idUser;
+	std::string _idGame;
+	int _timestamp;
 public:
 
-	TrackerEvent(int time,string idu,string idg);
-	void setEv(eventype e) { ev = e; }
-	void setIdUser(string id) { idUser = id; }
-	void setIdGame(string id) { idGame = id; }
-	void setTimestamp(int time) { timestamp = time; }
+	TrackerEvent(int timeStamp,std::string idUser,std::string idGame);
+	void setEv(eventype event) { _event = event; }
+	void setIdUser(std::string id) { _idUser = id; }
+	void setIdGame(std::string id) { _idGame = id; }
+	void setTimestamp(int timeStamp) { _timestamp = timeStamp; }
 
-	eventype getEvent() { return ev; }
-	string getIdUser() { return idUser; }
-	string getIdGame() { return idGame; }
-	int getTimeStamp() { return timestamp; }
+	eventype getEvent() { return _event; }
+	std::string getIdUser() { return _idUser; }
+	std::string getIdGame() { return _idGame; }
+	int getTimeStamp() { return _timestamp; }
 
 	virtual void toJson();
 };

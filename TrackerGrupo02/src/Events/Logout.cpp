@@ -4,7 +4,8 @@ void Logout::toJson()
 {
 }
 
-Logout::Logout(int time, string idu, string idg) :TrackerEvent(timestamp, idu, idg)
+Logout::Logout(int timeStamp, std::string idUser, std::string idGame)
+	:TrackerEvent(timeStamp, idUser, idGame)
 {
-	ev = eventype::Logout;
+	_event = eventype::Logout;
 }

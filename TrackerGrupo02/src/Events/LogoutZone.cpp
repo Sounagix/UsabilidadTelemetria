@@ -5,8 +5,8 @@ void LogoutZone::toJson()
 
 }
 
-LogoutZone::LogoutZone(int time, string idu, string idg, int z, bool comp)
-	:TrackerEvent(timestamp, idu, idg), zone(z), completed(comp)
+LogoutZone::LogoutZone(int timeStamp, std::string idUser, std::string idGame, int zone, int next)
+	:TrackerEvent(timeStamp, idUser, idGame), _zone(zone), _next(next)
 {
-	ev = eventype::LogoutZone;
+	_event = eventype::LogoutZone;
 }

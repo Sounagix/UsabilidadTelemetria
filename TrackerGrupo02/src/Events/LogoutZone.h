@@ -4,10 +4,10 @@
 class LogoutZone : public TrackerEvent
 {
 private:
-	int zone;
-	bool completed;
+	int _zone;
+	int _next;
 public:
 	void toJson();
-	LogoutZone(int time, string idu, string idg, int z, bool comp);
+	LogoutZone(int timeStamp, std::string idUser, std::string idGame, int zone, int next);
 };
 
