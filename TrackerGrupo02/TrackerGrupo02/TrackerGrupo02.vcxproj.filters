@@ -66,22 +66,22 @@
     <ClCompile Include="..\src\Events\OpenInv.cpp">
       <Filter>Archivos de origen\Events</Filter>
     </ClCompile>
-    <ClCompile Include="OpenChest.cpp">
+    <ClCompile Include="..\src\Events\OpenChest.cpp">
       <Filter>Archivos de origen\Events</Filter>
     </ClCompile>
-    <ClCompile Include="OpenShop.cpp">
+    <ClCompile Include="..\src\Events\OpenShop.cpp">
       <Filter>Archivos de origen\Events</Filter>
     </ClCompile>
-    <ClCompile Include="OpenSkills.cpp">
+    <ClCompile Include="..\src\Events\OpenSkills.cpp">
       <Filter>Archivos de origen\Events</Filter>
     </ClCompile>
-    <ClCompile Include="TutoTask.cpp">
+    <ClCompile Include="..\src\Events\TutoTask.cpp">
       <Filter>Archivos de origen\Events</Filter>
     </ClCompile>
-    <ClCompile Include="UsePot.cpp">
+    <ClCompile Include="..\src\Events\UsePot.cpp">
       <Filter>Archivos de origen\Events</Filter>
     </ClCompile>
-    <ClCompile Include="UseSkill.cpp">
+    <ClCompile Include="..\src\Events\UseSkill.cpp">
       <Filter>Archivos de origen\Events</Filter>
     </ClCompile>
   </ItemGroup>
@@ -113,22 +113,22 @@
     <ClInclude Include="..\src\Events\OpenInv.h">
       <Filter>Archivos de encabezado\Events</Filter>
     </ClInclude>
-    <ClInclude Include="OpenChest.h">
+    <ClInclude Include="..\src\Events\UsePot.h">
       <Filter>Archivos de encabezado\Events</Filter>
     </ClInclude>
-    <ClInclude Include="OpenShop.h">
+    <ClInclude Include="..\src\Events\UseSkill.h">
       <Filter>Archivos de encabezado\Events</Filter>
     </ClInclude>
-    <ClInclude Include="OpenSkills.h">
+    <ClInclude Include="..\src\Events\OpenChest.h">
       <Filter>Archivos de encabezado\Events</Filter>
     </ClInclude>
-    <ClInclude Include="TutoTask.h">
+    <ClInclude Include="..\src\Events\OpenShop.h">
       <Filter>Archivos de encabezado\Events</Filter>
     </ClInclude>
-    <ClInclude Include="UsePot.h">
+    <ClInclude Include="..\src\Events\OpenSkills.h">
       <Filter>Archivos de encabezado\Events</Filter>
     </ClInclude>
-    <ClInclude Include="UseSkill.h">
+    <ClInclude Include="..\src\Events\TutoTask.h">
       <Filter>Archivos de encabezado\Events</Filter>
     </ClInclude>
   </ItemGroup>
