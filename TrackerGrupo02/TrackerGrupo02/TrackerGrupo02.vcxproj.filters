@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de encabezado\Events">
+      <UniqueIdentifier>{42cc2522-5d06-4033-b5c7-cc36997adee9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Events">
+      <UniqueIdentifier>{f0c816ea-464d-4872-9cbf-c7f958dd8936}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Tracker.cpp">
@@ -27,6 +33,15 @@
     <ClCompile Include="..\src\TrackerEvent.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Login.cpp">
+      <Filter>Archivos de origen\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Logout.cpp">
+      <Filter>Archivos de origen\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginZone.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Tracker.h">
@@ -39,6 +54,15 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\src\TrackerEvent.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Login.h">
+      <Filter>Archivos de encabezado\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Logout.h">
+      <Filter>Archivos de encabezado\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginZone.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

@@ -23,12 +23,18 @@
     <ClCompile Include="..\src\ITrackerAsset.cpp" />
     <ClCompile Include="..\src\Tracker.cpp" />
     <ClCompile Include="..\src\TrackerEvent.cpp" />
+    <ClCompile Include="Login.cpp" />
+    <ClCompile Include="LoginZone.cpp" />
+    <ClCompile Include="Logout.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\IPersistence.h" />
     <ClInclude Include="..\src\ITrackerAsset.h" />
     <ClInclude Include="..\src\Tracker.h" />
     <ClInclude Include="..\src\TrackerEvent.h" />
+    <ClInclude Include="Login.h" />
+    <ClInclude Include="LoginZone.h" />
+    <ClInclude Include="Logout.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
