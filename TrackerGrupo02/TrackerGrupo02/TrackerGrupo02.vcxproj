@@ -19,22 +19,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\IPersistence.cpp" />
-    <ClCompile Include="..\src\ITrackerAsset.cpp" />
+    <ClCompile Include="..\src\Events\Login.cpp" />
+    <ClCompile Include="..\src\Events\LoginZone.cpp" />
+    <ClCompile Include="..\src\Events\Logout.cpp" />
+    <ClCompile Include="..\src\Events\LogoutZone.cpp" />
+    <ClCompile Include="..\src\Events\TrackerEvent.cpp" />
+    <ClCompile Include="..\src\Persistance\IPersistence.cpp" />
     <ClCompile Include="..\src\Tracker.cpp" />
-    <ClCompile Include="..\src\TrackerEvent.cpp" />
-    <ClCompile Include="Login.cpp" />
-    <ClCompile Include="LoginZone.cpp" />
-    <ClCompile Include="Logout.cpp" />
+    <ClCompile Include="..\src\TrackerAsset\ITrackerAsset.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\IPersistence.h" />
-    <ClInclude Include="..\src\ITrackerAsset.h" />
+    <ClInclude Include="..\src\Events\Login.h" />
+    <ClInclude Include="..\src\Events\LoginZone.h" />
+    <ClInclude Include="..\src\Events\Logout.h" />
+    <ClInclude Include="..\src\Events\LogoutZone.h" />
+    <ClInclude Include="..\src\Events\TrackerEvent.h" />
+    <ClInclude Include="..\src\Persistance\IPersistence.h" />
     <ClInclude Include="..\src\Tracker.h" />
-    <ClInclude Include="..\src\TrackerEvent.h" />
-    <ClInclude Include="Login.h" />
-    <ClInclude Include="LoginZone.h" />
-    <ClInclude Include="Logout.h" />
+    <ClInclude Include="..\src\TrackerAsset\ITrackerAsset.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -116,6 +118,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\Events;$(SolutionDir)src\Persistance;$(SolutionDir)src\Serialize;$(SolutionDir)src\TrackerAsset;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,6 +133,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\Events;$(SolutionDir)src\Persistance;$(SolutionDir)src\Serialize;$(SolutionDir)src\TrackerAsset;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,6 +148,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\Events;$(SolutionDir)src\Persistance;$(SolutionDir)src\Serialize;$(SolutionDir)src\TrackerAsset;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -158,6 +163,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\Events;$(SolutionDir)src\Persistance;$(SolutionDir)src\Serialize;$(SolutionDir)src\TrackerAsset;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

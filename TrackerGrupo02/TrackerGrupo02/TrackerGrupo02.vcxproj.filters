@@ -19,51 +19,75 @@
     <Filter Include="Archivos de origen\Events">
       <UniqueIdentifier>{f0c816ea-464d-4872-9cbf-c7f958dd8936}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\Serialize">
+      <UniqueIdentifier>{773e9f0a-6931-4ecc-ad8b-dd81ddfaa810}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Persistance">
+      <UniqueIdentifier>{38fb1e54-c82b-46a6-8019-e96a45c7d177}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\TrackerAsset">
+      <UniqueIdentifier>{3411086c-3281-4826-b6b7-60795c62049b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Persistance">
+      <UniqueIdentifier>{97f8d1e3-71ea-4fb9-bc34-bb7ff0b4735f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\TrackerAsset">
+      <UniqueIdentifier>{78f28af9-fa49-48b9-b999-d67ff501b9ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Serialize">
+      <UniqueIdentifier>{cacac4d7-290a-4bcd-807c-2d67dfa8ea3b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Tracker.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\IPersistence.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ITrackerAsset.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TrackerEvent.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Login.cpp">
+    <ClCompile Include="..\src\Events\Login.cpp">
       <Filter>Archivos de origen\Events</Filter>
     </ClCompile>
-    <ClCompile Include="Logout.cpp">
+    <ClCompile Include="..\src\Events\LoginZone.cpp">
       <Filter>Archivos de origen\Events</Filter>
     </ClCompile>
-    <ClCompile Include="LoginZone.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="..\src\Events\Logout.cpp">
+      <Filter>Archivos de origen\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Events\LogoutZone.cpp">
+      <Filter>Archivos de origen\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Events\TrackerEvent.cpp">
+      <Filter>Archivos de origen\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Persistance\IPersistence.cpp">
+      <Filter>Archivos de origen\Persistance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TrackerAsset\ITrackerAsset.cpp">
+      <Filter>Archivos de origen\TrackerAsset</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Tracker.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\IPersistence.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ITrackerAsset.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TrackerEvent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Login.h">
+    <ClInclude Include="..\src\Events\TrackerEvent.h">
       <Filter>Archivos de encabezado\Events</Filter>
     </ClInclude>
-    <ClInclude Include="Logout.h">
+    <ClInclude Include="..\src\Events\Login.h">
       <Filter>Archivos de encabezado\Events</Filter>
     </ClInclude>
-    <ClInclude Include="LoginZone.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="..\src\Events\LoginZone.h">
+      <Filter>Archivos de encabezado\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Events\Logout.h">
+      <Filter>Archivos de encabezado\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Events\LogoutZone.h">
+      <Filter>Archivos de encabezado\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Persistance\IPersistence.h">
+      <Filter>Archivos de encabezado\Persistance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TrackerAsset\ITrackerAsset.h">
+      <Filter>Archivos de encabezado\TrackerAsset</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

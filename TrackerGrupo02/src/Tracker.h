@@ -2,6 +2,10 @@
 #include <list>
 #include "ITrackerAsset.h"
 
+enum class PersistenceType {
+	FILE = 0,
+	SERVER = 1
+};
 
 class IPersistence;
 class ITrackerAsset;
@@ -17,12 +21,16 @@ private:
 	Tracker();
 
 public:
-	
-	static bool Init(IPersistence* iPersistence);
+	/// <summary>
+	/// Inicializa el singleton del Tracker
+	/// </summary>
+	/// <param name="iPersistence"></param>
+	/// <returns></returns>
+	static bool Init(PersistenceType persitType);
 
 	static bool End();
 
-	static void AddTrackEvent(TrackerEvent trackEvent);
+	static void TrackEvent();
 
 	static Tracker* GetInstance();
 };

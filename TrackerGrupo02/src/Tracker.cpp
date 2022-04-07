@@ -14,10 +14,21 @@ Tracker::Tracker() {
 
 }
 
-bool Tracker::Init(IPersistence* iPersistence)
+bool Tracker::Init(PersistenceType persistType)
 {
-	if (iPersistence != nullptr) {
-		persistenceObject = iPersistence;
+	if (persistenceObject != nullptr) {
+		switch (persistType)
+		{
+		case PersistenceType::FILE:
+			// TODO: Crearlo de forma FILE
+			//persistenceObject = new IPersistence();
+			break;
+		case PersistenceType::SERVER:
+			break;
+		default:
+			break;
+		}
+		
 		return true;
 	}
 	else
@@ -33,7 +44,7 @@ bool Tracker::End()
 	return false;
 }
 
-void Tracker::AddTrackEvent(TrackerEvent trackEvent)
+void Tracker::TrackEvent(/*Aqui se incluyen los parametros del evento que se va a crear */)
 {
 	// std::find(activeTrackers.begin(), activeTrackers.end(), trackEvent);
 	// TODO check que el evento es aceptado antes de enviarlo
