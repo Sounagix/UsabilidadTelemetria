@@ -4,9 +4,12 @@
 class UseSkill : public TrackerEvent
 {
 private:
-	int _zone;
+	int _zone = 0;
 public:
-	void toJson();
-	UseSkill(int timeStamp, std::string idUser, std::string idGame, int zone);
+	std::string toJson();
+	UseSkill();
+
+	void setZone(int zone);
+	int getZone();
 };
 

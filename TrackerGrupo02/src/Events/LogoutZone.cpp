@@ -1,12 +1,30 @@
 #include "LogoutZone.h"
 
-void LogoutZone::toJson()
+std::string LogoutZone::toJson()
 {
-
+	return " ";
 }
 
-LogoutZone::LogoutZone(int timeStamp, std::string idUser, std::string idGame, int zone, int next)
-	:TrackerEvent(timeStamp, idUser, idGame), _zone(zone), _next(next)
+LogoutZone::LogoutZone() : TrackerEvent()
 {
-	_event = eventype::LogoutZone;
+}
+
+void LogoutZone::setZone(int zone)
+{
+	_zone = zone;
+}
+
+void LogoutZone::setNext(int next)
+{
+	_next = next;
+}
+
+int LogoutZone::getZone()
+{
+	return _zone;
+}
+
+int LogoutZone::getNext()
+{	
+	return _next;
 }

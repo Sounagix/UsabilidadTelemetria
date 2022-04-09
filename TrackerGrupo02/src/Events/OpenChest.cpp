@@ -1,11 +1,18 @@
 #include "OpenChest.h"
 
-void OpenChest::toJson()
+std::string OpenChest::toJson()
 {
+	return " ";
 }
 
-OpenChest::OpenChest(int timeStamp, std::string idUser, std::string idGame, bool openInv)
-	:TrackerEvent(timeStamp, idUser, idGame),_openInv(openInv)
+void OpenChest::setOpenInv(bool openInv)
 {
-	_event = eventype::OpenChest;
+	_openInv = openInv;
 }
+
+bool OpenChest::getOpenInv()
+{
+	return _openInv;
+}
+
+OpenChest::OpenChest() :TrackerEvent() {}

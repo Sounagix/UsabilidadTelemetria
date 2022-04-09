@@ -7,7 +7,10 @@ private:
 	std::string _name;
 	int _timeOut;
 public:
-	void toJson();
-	TutoTask(int timeStamp, std::string idUser, std::string idGame,std::string name, int timeOut);
+	std::string toJson();
+	TutoTask();
+
+	void setName(std::string name);
+	std::string getName();
 };
 

@@ -4,10 +4,16 @@
 class OpenInv : public TrackerEvent
 {
 private:
-	int _timeOut;
-	bool _equipPot;
+	int _timeOut = 0;
+	bool _equipPot = false;
+
 public:
-	void toJson();
-	OpenInv(int timeStamp, std::string idUser, std::string idGame, int timeOut, bool equipPot);
+	std::string toJson();
+	OpenInv();
+
+	void setTimeOut(int timeOut);
+	void setEquipPot(bool equipPot);
+	int getTimeOut();
+	bool getEquipPot();
 };
 

@@ -24,10 +24,13 @@
 *.lai
 *.la
 *.a
-*.lib
-*.vs
-.\tmp
-.\lib
+
+# Directorios innecesarios
+.vs/
+/[Tt]mp
+/[Ll]ib
+/[Ee]xes
+
 
 # Executables
 *.exe

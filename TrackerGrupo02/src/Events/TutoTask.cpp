@@ -1,11 +1,18 @@
 #include "TutoTask.h"
 
-void TutoTask::toJson()
+std::string TutoTask::toJson()
 {
+	return " ";
 }
 
-TutoTask::TutoTask(int timeStamp, std::string idUser, std::string idGame, std::string name, int timeOut)
-	:TrackerEvent(timeStamp, idUser, idGame),_name(name),_timeOut(timeOut)
+void TutoTask::setName(std::string name)
 {
-	_event = eventype::TutoTask;
+	_name = name;
 }
+
+std::string TutoTask::getName()
+{
+	return _name;
+}
+
+TutoTask::TutoTask() :TrackerEvent() {}

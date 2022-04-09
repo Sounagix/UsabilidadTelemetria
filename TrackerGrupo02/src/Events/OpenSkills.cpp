@@ -1,11 +1,18 @@
 #include "OpenSkills.h"
 
-void OpenSkills::toJson()
+std::string OpenSkills::toJson()
 {
+	return " ";
 }
 
-OpenSkills::OpenSkills(int timeStamp, std::string idUser, std::string idGame, bool points)
-	:TrackerEvent(timeStamp, idUser, idGame),_points(points)
+OpenSkills::OpenSkills() :TrackerEvent() {}
+
+void OpenSkills::setPoints(bool points)
 {
-	_event = eventype::OpenSkills;
+	_points = points;
+}
+
+bool OpenSkills::getPoints()
+{
+	return _points;
 }

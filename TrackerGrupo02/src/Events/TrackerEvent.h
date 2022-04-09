@@ -1,42 +1,48 @@
 #pragma once
 #include <iostream>
 
-enum eventype
+enum class EventType : int
 {
-	Login,
-	Logout,
-	LoginZone,
-	LogoutZone,
-	OpenInv,
-	OpenSkills,
-	OpenChest,
-	OpenShop,
-	UseSkill,
-	UsePot,
-	TutoTask,
+	Login = 0,
+	Logout = 1,
+	LoginZone = 2,
+	LogoutZone = 3,
+	OpenInv = 4,
+	OpenSkills = 5,
+	OpenChest = 6,
+	OpenShop = 7,
+	UseSkill = 8,
+	UsePot = 9,
+	TutoTask = 10,
+
+	NONE = 100
 };
 
 
 class TrackerEvent
 {
 protected:
-	eventype _event;
-	std::string _idUser;
-	std::string _idGame;
-	int _timestamp;
+	EventType _event = EventType::NONE;
+	std::string _idUser = "none";
+	std::string _idGame = "none";
+	int _timestamp = 0;
+	TrackerEvent() {};
+
 public:
 
-	TrackerEvent(int timeStamp,std::string idUser,std::string idGame);
-	void setEv(eventype event) { _event = event; }
-	void setIdUser(std::string id) { _idUser = id; }
-	void setIdGame(std::string id) { _idGame = id; }
-	void setTimestamp(int timeStamp) { _timestamp = timeStamp; }
+	//-------------------SET---------------//
+	void setEv(EventType event);
+	void setIdUser(std::string id);
+	void setIdGame(std::string id);
+	void setTimestamp(int timeStamp);
 
-	eventype getEvent() { return _event; }
-	std::string getIdUser() { return _idUser; }
-	std::string getIdGame() { return _idGame; }
-	int getTimeStamp() { return _timestamp; }
+	//-------------------GET---------------//
+	EventType getEvent();
+	std::string getIdUser();
+	std::string getIdGame();
+	int getTimeStamp();
 
-	virtual void toJson();
+	//-------------------OTHER---------------//
+	virtual std::string toJson() { return ""; };
 };
 

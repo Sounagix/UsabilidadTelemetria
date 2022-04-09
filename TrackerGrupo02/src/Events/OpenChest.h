@@ -4,9 +4,12 @@
 class OpenChest : public TrackerEvent
 {
 private:
-	bool _openInv;
+	bool _openInv = false;
 public:
-	void toJson();
-	OpenChest(int timeStamp, std::string idUser, std::string idGame, bool openInv);
+	std::string toJson();
+	OpenChest();
+
+	void setOpenInv(bool openInv);
+	bool getOpenInv();
 };
 

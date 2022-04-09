@@ -1,12 +1,28 @@
 #include "OpenInv.h"
 
-void OpenInv::toJson()
+std::string OpenInv::toJson()
 {
-
+	return "Sigan viendo...";
 }
 
-OpenInv::OpenInv(int timeStamp, std::string idUser, std::string idGame, int timeOut, bool equipPot)
-	:TrackerEvent(timeStamp, idUser, idGame), _timeOut(timeOut), _equipPot(equipPot)
+OpenInv::OpenInv() :TrackerEvent() {}
+
+void OpenInv::setTimeOut(int timeOut)
 {
-	_event = eventype::OpenInv;
+	_timeOut = timeOut;
+}
+
+void OpenInv::setEquipPot(bool equipPot)
+{
+	_equipPot = equipPot;
+}
+
+int OpenInv::getTimeOut()
+{
+	return _timeOut;
+}
+
+bool OpenInv::getEquipPot()
+{
+	return _equipPot;
 }

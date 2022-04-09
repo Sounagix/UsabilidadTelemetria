@@ -4,7 +4,7 @@
 class OpenShop : public TrackerEvent
 {
 public:
-	void toJson();
-	OpenShop(int timeStamp, std::string idUser, std::string idGame);
+	std::string toJson();
+	OpenShop();
 };
 

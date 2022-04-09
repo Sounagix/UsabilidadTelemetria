@@ -1,11 +1,18 @@
 #include "UseSkill.h"
 
-void UseSkill::toJson()
+std::string UseSkill::toJson()
 {
+	return " ";
 }
 
-UseSkill::UseSkill(int timeStamp, std::string idUser, std::string idGame, int zone)
-	:TrackerEvent(timeStamp, idUser, idGame),_zone(zone)
+void UseSkill::setZone(int zone)
 {
-	_event = eventype::UseSkill;
+	_zone = zone;
 }
+
+int UseSkill::getZone()
+{
+	return _zone;
+}
+
+UseSkill::UseSkill() :TrackerEvent() {}

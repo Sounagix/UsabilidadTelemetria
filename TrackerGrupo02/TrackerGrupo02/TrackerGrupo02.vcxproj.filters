@@ -84,6 +84,15 @@
     <ClCompile Include="..\src\Events\UseSkill.cpp">
       <Filter>Archivos de origen\Events</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Persistance\FilePersistence.cpp">
+      <Filter>Archivos de origen\Persistance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Serialize\ISerializer.cpp">
+      <Filter>Archivos de origen\Serialize</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Serialize\JsonSerializer.cpp">
+      <Filter>Archivos de origen\Serialize</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Tracker.h">
@@ -130,6 +139,18 @@
     </ClInclude>
     <ClInclude Include="..\src\Events\TutoTask.h">
       <Filter>Archivos de encabezado\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Events\AllEvents.h">
+      <Filter>Archivos de encabezado\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Persistance\FilePersistence.h">
+      <Filter>Archivos de encabezado\Persistance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Serialize\ISerializer.h">
+      <Filter>Archivos de encabezado\Serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Serialize\JsonSerializer.h">
+      <Filter>Archivos de encabezado\Serialize</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

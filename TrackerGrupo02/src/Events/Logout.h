@@ -4,7 +4,7 @@
 class Logout : public TrackerEvent
 {
 public:
-	void toJson();
-	Logout(int timeStamp, std::string idUser, std::string idGame);
+	std::string toJson();
+	Logout();
 };
 

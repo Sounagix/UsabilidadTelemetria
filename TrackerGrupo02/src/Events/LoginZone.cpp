@@ -1,12 +1,28 @@
 #include "LoginZone.h"
 
-void LoginZone::toJson()
+std::string LoginZone::toJson()
 {
-
+	return " ";
 }
 
-LoginZone::LoginZone(int timeStamp, std::string idUser, std::string idGame, int z, bool comp)
-	:TrackerEvent(timeStamp, idUser, idGame), zone(z), completed(comp)
+LoginZone::LoginZone() : TrackerEvent() {}
+
+void LoginZone::setZone(int zone)
 {
-	_event = eventype::LoginZone;
+	_zone = zone;
+}
+
+void LoginZone::setCompleted(bool completed)
+{
+	_completed = completed;
+}
+
+int LoginZone::getZone()
+{
+	return _zone;
+}
+
+bool LoginZone::getCompleted()
+{
+	return 	_completed;
 }

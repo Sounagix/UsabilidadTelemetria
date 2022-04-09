@@ -4,10 +4,15 @@
 class LoginZone : public TrackerEvent
 {
 private:
-	int zone;
-	bool completed;
+	int _zone = 0;
+	bool _completed = false;
 public:
-	void toJson();
-	LoginZone(int timeStamp, std::string idUser, std::string idGame,int z, bool comp);
+	std::string toJson();
+	LoginZone();
+
+	void setZone(int zone);
+	void setCompleted(bool completed);
+	int getZone();
+	bool getCompleted();
 };
 

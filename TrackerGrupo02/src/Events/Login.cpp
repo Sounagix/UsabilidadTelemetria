@@ -1,12 +1,8 @@
 #include "Login.h"
 
-void Login::toJson()
+std::string Login::toJson()
 {
-
+	return " ";
 }
 
-Login::Login(int timeStamp, std::string idUser, std::string idGame)
-	:TrackerEvent(timeStamp, idUser, idGame)
-{
-	_event = eventype::Login;
-}
+Login::Login() :TrackerEvent() {}
