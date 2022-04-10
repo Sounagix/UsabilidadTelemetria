@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Archivos de encabezado\Events">
-      <UniqueIdentifier>{42cc2522-5d06-4033-b5c7-cc36997adee9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Events">
-      <UniqueIdentifier>{f0c816ea-464d-4872-9cbf-c7f958dd8936}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de origen\Serialize">
       <UniqueIdentifier>{773e9f0a-6931-4ecc-ad8b-dd81ddfaa810}</UniqueIdentifier>
     </Filter>
@@ -42,47 +36,11 @@
     <ClCompile Include="..\src\Tracker.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Events\Login.cpp">
-      <Filter>Archivos de origen\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Events\LoginZone.cpp">
-      <Filter>Archivos de origen\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Events\Logout.cpp">
-      <Filter>Archivos de origen\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Events\LogoutZone.cpp">
-      <Filter>Archivos de origen\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Events\TrackerEvent.cpp">
-      <Filter>Archivos de origen\Events</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Persistance\IPersistence.cpp">
       <Filter>Archivos de origen\Persistance</Filter>
     </ClCompile>
     <ClCompile Include="..\src\TrackerAsset\ITrackerAsset.cpp">
       <Filter>Archivos de origen\TrackerAsset</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Events\OpenInv.cpp">
-      <Filter>Archivos de origen\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Events\OpenChest.cpp">
-      <Filter>Archivos de origen\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Events\OpenShop.cpp">
-      <Filter>Archivos de origen\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Events\OpenSkills.cpp">
-      <Filter>Archivos de origen\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Events\TutoTask.cpp">
-      <Filter>Archivos de origen\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Events\UsePot.cpp">
-      <Filter>Archivos de origen\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Events\UseSkill.cpp">
-      <Filter>Archivos de origen\Events</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Persistance\FilePersistence.cpp">
       <Filter>Archivos de origen\Persistance</Filter>
@@ -98,50 +56,11 @@
     <ClInclude Include="..\src\Tracker.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Events\TrackerEvent.h">
-      <Filter>Archivos de encabezado\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Events\Login.h">
-      <Filter>Archivos de encabezado\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Events\LoginZone.h">
-      <Filter>Archivos de encabezado\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Events\Logout.h">
-      <Filter>Archivos de encabezado\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Events\LogoutZone.h">
-      <Filter>Archivos de encabezado\Events</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Persistance\IPersistence.h">
       <Filter>Archivos de encabezado\Persistance</Filter>
     </ClInclude>
     <ClInclude Include="..\src\TrackerAsset\ITrackerAsset.h">
       <Filter>Archivos de encabezado\TrackerAsset</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Events\OpenInv.h">
-      <Filter>Archivos de encabezado\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Events\UsePot.h">
-      <Filter>Archivos de encabezado\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Events\UseSkill.h">
-      <Filter>Archivos de encabezado\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Events\OpenChest.h">
-      <Filter>Archivos de encabezado\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Events\OpenShop.h">
-      <Filter>Archivos de encabezado\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Events\OpenSkills.h">
-      <Filter>Archivos de encabezado\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Events\TutoTask.h">
-      <Filter>Archivos de encabezado\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Events\AllEvents.h">
-      <Filter>Archivos de encabezado\Events</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Persistance\FilePersistence.h">
       <Filter>Archivos de encabezado\Persistance</Filter>

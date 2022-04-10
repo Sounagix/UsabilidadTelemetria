@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TrackerGrupo02", "TrackerGr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tester", "Tester\Tester.vcxproj", "{4CAB6628-72FC-403D-9634-4EC16C1E11C5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TrackerEvent", "TrackerEvent\TrackerEvent.vcxproj", "{FCC49A3A-1A4D-454D-94BE-896DFE2481B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{4CAB6628-72FC-403D-9634-4EC16C1E11C5}.Release|x64.Build.0 = Release|x64
 		{4CAB6628-72FC-403D-9634-4EC16C1E11C5}.Release|x86.ActiveCfg = Release|Win32
 		{4CAB6628-72FC-403D-9634-4EC16C1E11C5}.Release|x86.Build.0 = Release|Win32
+		{FCC49A3A-1A4D-454D-94BE-896DFE2481B5}.Debug|x64.ActiveCfg = Debug|x64
+		{FCC49A3A-1A4D-454D-94BE-896DFE2481B5}.Debug|x64.Build.0 = Debug|x64
+		{FCC49A3A-1A4D-454D-94BE-896DFE2481B5}.Debug|x86.ActiveCfg = Debug|Win32
+		{FCC49A3A-1A4D-454D-94BE-896DFE2481B5}.Debug|x86.Build.0 = Debug|Win32
+		{FCC49A3A-1A4D-454D-94BE-896DFE2481B5}.Release|x64.ActiveCfg = Release|x64
+		{FCC49A3A-1A4D-454D-94BE-896DFE2481B5}.Release|x64.Build.0 = Release|x64
+		{FCC49A3A-1A4D-454D-94BE-896DFE2481B5}.Release|x86.ActiveCfg = Release|Win32
+		{FCC49A3A-1A4D-454D-94BE-896DFE2481B5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

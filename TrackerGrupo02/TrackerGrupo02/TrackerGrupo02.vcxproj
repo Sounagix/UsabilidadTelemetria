@@ -19,18 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Events\Login.cpp" />
-    <ClCompile Include="..\src\Events\LoginZone.cpp" />
-    <ClCompile Include="..\src\Events\Logout.cpp" />
-    <ClCompile Include="..\src\Events\LogoutZone.cpp" />
-    <ClCompile Include="..\src\Events\OpenChest.cpp" />
-    <ClCompile Include="..\src\Events\OpenInv.cpp" />
-    <ClCompile Include="..\src\Events\OpenShop.cpp" />
-    <ClCompile Include="..\src\Events\OpenSkills.cpp" />
-    <ClCompile Include="..\src\Events\TrackerEvent.cpp" />
-    <ClCompile Include="..\src\Events\TutoTask.cpp" />
-    <ClCompile Include="..\src\Events\UsePot.cpp" />
-    <ClCompile Include="..\src\Events\UseSkill.cpp" />
     <ClCompile Include="..\src\Persistance\FilePersistence.cpp" />
     <ClCompile Include="..\src\Persistance\IPersistence.cpp" />
     <ClCompile Include="..\src\Serialize\ISerializer.cpp" />
@@ -39,25 +27,17 @@
     <ClCompile Include="..\src\TrackerAsset\ITrackerAsset.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Events\AllEvents.h" />
-    <ClInclude Include="..\src\Events\Login.h" />
-    <ClInclude Include="..\src\Events\LoginZone.h" />
-    <ClInclude Include="..\src\Events\Logout.h" />
-    <ClInclude Include="..\src\Events\LogoutZone.h" />
-    <ClInclude Include="..\src\Events\OpenChest.h" />
-    <ClInclude Include="..\src\Events\OpenInv.h" />
-    <ClInclude Include="..\src\Events\OpenShop.h" />
-    <ClInclude Include="..\src\Events\OpenSkills.h" />
-    <ClInclude Include="..\src\Events\TrackerEvent.h" />
-    <ClInclude Include="..\src\Events\TutoTask.h" />
-    <ClInclude Include="..\src\Events\UsePot.h" />
-    <ClInclude Include="..\src\Events\UseSkill.h" />
     <ClInclude Include="..\src\Persistance\FilePersistence.h" />
     <ClInclude Include="..\src\Persistance\IPersistence.h" />
     <ClInclude Include="..\src\Serialize\ISerializer.h" />
     <ClInclude Include="..\src\Serialize\JsonSerializer.h" />
     <ClInclude Include="..\src\Tracker.h" />
     <ClInclude Include="..\src\TrackerAsset\ITrackerAsset.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrackerEvent\TrackerEvent.vcxproj">
+      <Project>{fcc49a3a-1a4d-454d-94be-896dfe2481b5}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -115,23 +95,23 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)lib\$(Platform)\$(Configuration)\</OutDir>
     <TargetName>$(ProjectName)_d</TargetName>
-    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\tracker\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)lib\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\tracker\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)lib\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\tracker\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)lib\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\tracker\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -145,6 +125,10 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib/$(Platform)/$(Configuration)/</AdditionalLibraryDirectories>
+      <AdditionalDependencies>TrackerEvent_d.lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -162,6 +146,12 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>TrackerEvent.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib/$(Platform)/$(Configuration)/</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -175,6 +165,10 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib/$(Platform)/$(Configuration)/</AdditionalLibraryDirectories>
+      <AdditionalDependencies>TrackerEvent_d.lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -192,6 +186,12 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>TrackerEvent.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib/$(Platform)/$(Configuration)/</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,6 @@
 #include "FilePersistence.h"
 #include "JsonSerializer.h"
+#include "AllEvents.h"
 #include <iostream>
 
 bool FilePersistence::init(TypeOfFile type)
@@ -37,6 +38,7 @@ void FilePersistence::flush()
 		// TODO: Parsear al archivo de texto
 		std::cout << json << "- Success...\n";
 		_eventQueue.pop();
-		delete e; e = nullptr;
+		delete e;
+		e = nullptr;
 	}
 }

@@ -26,7 +26,7 @@ public:
 	/// </summary>
 	/// <param name="iPersistence"></param>
 	/// <returns></returns>
-	static bool Init(PersistenceType persistType, TypeOfFile fileType = TypeOfFile::Json);
+	static bool Init(PersistenceType persistType = PersistenceType::FILE, TypeOfFile fileType = TypeOfFile::Json);
 	/// <summary>
 	/// Realiza el volcado de los datos que esten en la cola
 	/// </summary>

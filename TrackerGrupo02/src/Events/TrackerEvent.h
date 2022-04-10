@@ -29,6 +29,7 @@ protected:
 	TrackerEvent() {};
 
 public:
+	~TrackerEvent() {}
 
 	//-------------------SET---------------//
 	void setEv(EventType event);

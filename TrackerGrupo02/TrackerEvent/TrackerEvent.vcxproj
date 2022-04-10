@@ -21,32 +21,32 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4cab6628-72fc-403d-9634-4ec16c1e11c5}</ProjectGuid>
-    <RootNamespace>Tester</RootNamespace>
+    <ProjectGuid>{fcc49a3a-1a4d-454d-94be-896dfe2481b5}</ProjectGuid>
+    <RootNamespace>TrackerEvent</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -72,25 +72,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)exes\</OutDir>
-    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\tester\</IntDir>
-    <TargetName>$(ProjectName)_D32</TargetName>
+    <OutDir>$(SolutionDir)lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\trackerEvent\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)exes\</OutDir>
-    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\tester\</IntDir>
+    <OutDir>$(SolutionDir)lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\trackerEvent\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)exes\</OutDir>
-    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\tester\</IntDir>
-    <TargetName>$(ProjectName)_D64</TargetName>
+    <OutDir>$(SolutionDir)lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\trackerEvent\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)exes\</OutDir>
-    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\tester\</IntDir>
+    <OutDir>$(SolutionDir)lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)tmp\$(Platform)\$(Configuration)\trackerEvent\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -98,13 +98,11 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)src\Events;$(SolutionDir)src;$(SolutionDir)src\Serialize;$(SolutionDir)src\Persistance;$(SolutionDir)src\TrackerAsset;%(AdditionalLibraryDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src/Events/</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>TrackerGrupo02_d.lib;TrackerEvent_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -115,15 +113,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)src\Events;$(SolutionDir)src;$(SolutionDir)src\Serialize;$(SolutionDir)src\Persistance;$(SolutionDir)src\TrackerAsset;%(AdditionalLibraryDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src/Events/</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>TrackerGrupo02.lib;TrackerEvent_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -132,13 +128,11 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)src\Events;$(SolutionDir)src;$(SolutionDir)src\Serialize;$(SolutionDir)src\Persistance;$(SolutionDir)src\TrackerAsset;%(AdditionalLibraryDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src/Events/</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>TrackerGrupo02_d.lib;TrackerEvent_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -149,27 +143,43 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)src\Events;$(SolutionDir)src;$(SolutionDir)src\Serialize;$(SolutionDir)src\Persistance;$(SolutionDir)src\TrackerAsset;%(AdditionalLibraryDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src/Events/</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>TrackerGrupo02.lib;TrackerEvent_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Tester.cpp" />
+    <ClInclude Include="..\src\Events\AllEvents.h" />
+    <ClInclude Include="..\src\Events\Login.h" />
+    <ClInclude Include="..\src\Events\LoginZone.h" />
+    <ClInclude Include="..\src\Events\Logout.h" />
+    <ClInclude Include="..\src\Events\LogoutZone.h" />
+    <ClInclude Include="..\src\Events\OpenChest.h" />
+    <ClInclude Include="..\src\Events\OpenInv.h" />
+    <ClInclude Include="..\src\Events\OpenShop.h" />
+    <ClInclude Include="..\src\Events\OpenSkills.h" />
+    <ClInclude Include="..\src\Events\TrackerEvent.h" />
+    <ClInclude Include="..\src\Events\TutoTask.h" />
+    <ClInclude Include="..\src\Events\UsePot.h" />
+    <ClInclude Include="..\src\Events\UseSkill.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TrackerEvent\TrackerEvent.vcxproj">
-      <Project>{fcc49a3a-1a4d-454d-94be-896dfe2481b5}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\TrackerGrupo02\TrackerGrupo02.vcxproj">
-      <Project>{f330fb07-b1c9-40da-a00e-e74b2eed60b3}</Project>
-    </ProjectReference>
+    <ClCompile Include="..\src\Events\Login.cpp" />
+    <ClCompile Include="..\src\Events\LoginZone.cpp" />
+    <ClCompile Include="..\src\Events\Logout.cpp" />
+    <ClCompile Include="..\src\Events\LogoutZone.cpp" />
+    <ClCompile Include="..\src\Events\OpenChest.cpp" />
+    <ClCompile Include="..\src\Events\OpenInv.cpp" />
+    <ClCompile Include="..\src\Events\OpenShop.cpp" />
+    <ClCompile Include="..\src\Events\OpenSkills.cpp" />
+    <ClCompile Include="..\src\Events\TrackerEvent.cpp" />
+    <ClCompile Include="..\src\Events\TutoTask.cpp" />
+    <ClCompile Include="..\src\Events\UsePot.cpp" />
+    <ClCompile Include="..\src\Events\UseSkill.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
