@@ -27,16 +27,30 @@ void FilePersistence::send(TrackerEvent* trackEvent)
 	_eventQueue.push(trackEvent);
 }
 
-void FilePersistence::flush()
+void FilePersistence::flush(std::string pathFile)
 {
 	// TODO: Decirle al Serialize que serialice los datos del TrackerEvent
 	// para posteriormente recogerlos y crear el archivo Json
+	int i = 0;
 	while (!_eventQueue.empty())
 	{
 		TrackerEvent* e = _eventQueue.front();
 		std::string json = _serializer->serialize(e);
 		// TODO: Parsear al archivo de texto
-		std::cout << json << "- Success...\n";
+		
+		
+		std::string aux = pathFile + e->getEventName() + std::to_string(i);
+		if (std::ifstream(aux+".json").good())
+		{
+			i++;
+			aux = pathFile + e->getEventName() + std::to_string(i);
+		}
+		aux += ".json";
+		std::ofstream file(aux);
+
+		file << json ;
+		file.close();
+		
 		_eventQueue.pop();
 		delete e;
 		e = nullptr;

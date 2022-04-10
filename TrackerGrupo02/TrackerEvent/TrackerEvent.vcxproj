@@ -154,6 +154,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Events\AllEvents.h" />
+    <ClInclude Include="..\src\Events\EventInfo.h" />
+    <ClInclude Include="..\src\Events\jute.h" />
     <ClInclude Include="..\src\Events\Login.h" />
     <ClInclude Include="..\src\Events\LoginZone.h" />
     <ClInclude Include="..\src\Events\Logout.h" />
@@ -168,6 +170,7 @@
     <ClInclude Include="..\src\Events\UseSkill.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\Events\jute.cpp" />
     <ClCompile Include="..\src\Events\Login.cpp" />
     <ClCompile Include="..\src\Events\LoginZone.cpp" />
     <ClCompile Include="..\src\Events\Logout.cpp" />
@@ -180,6 +183,7 @@
     <ClCompile Include="..\src\Events\TutoTask.cpp" />
     <ClCompile Include="..\src\Events\UsePot.cpp" />
     <ClCompile Include="..\src\Events\UseSkill.cpp" />
+    <ClCompile Include="EventInfo.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

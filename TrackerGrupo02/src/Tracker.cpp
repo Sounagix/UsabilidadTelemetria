@@ -35,13 +35,13 @@ bool Tracker::Init(PersistenceType persistType, TypeOfFile fileType)
 	return persistenceObject->init(fileType);
 }
 
-bool Tracker::End()
+bool Tracker::End(std::string pathFile)
 {
 	// TODO: Comprobacion sobre si el evento esta activado
 	// esto solo seria necesario si hacemos trackers 
 	// especializados
 	try {
-		persistenceObject->flush();
+		persistenceObject->flush(pathFile);
 	}
 	catch (std::exception e) {
 		std::cout << "Errorr al realizar el volcado de los datos... " << e.what() << std::endl;
@@ -65,37 +65,37 @@ TrackerEvent* Tracker::CreateNewEvent(int timeStamp, std::string idUser, std::st
 
 	switch (eType)
 	{
-	case (int)EventType::Login:
+	case (int)EventInfo::EventType::Login:
 		newEvent = new Login();
 		break;
-	case (int)EventType::Logout:
+	case (int)EventInfo::EventType::Logout:
 		newEvent = new Logout();
 		break;
-	case (int)EventType::LoginZone:
+	case (int)EventInfo::EventType::LoginZone:
 		newEvent = new LoginZone();
 		break;
-	case (int)EventType::LogoutZone:
+	case (int)EventInfo::EventType::LogoutZone:
 		newEvent = new LogoutZone();
 		break;
-	case (int)EventType::OpenInv:
+	case (int)EventInfo::EventType::OpenInv:
 		newEvent = new OpenInv();
 		break;
-	case (int)EventType::OpenSkills:
+	case (int)EventInfo::EventType::OpenSkills:
 		newEvent = new OpenSkills();
 		break;
-	case (int)EventType::OpenChest:
+	case (int)EventInfo::EventType::OpenChest:
 		newEvent = new OpenChest();
 		break;
-	case (int)EventType::OpenShop:
+	case (int)EventInfo::EventType::OpenShop:
 		newEvent = new OpenShop();
 		break;
-	case (int)EventType::UseSkill:
+	case (int)EventInfo::EventType::UseSkill:
 		newEvent = new UseSkill();
 		break;
-	case (int)EventType::UsePot:
+	case (int)EventInfo::EventType::UsePot:
 		newEvent = new UsePot();
 		break;
-	case (int)EventType::TutoTask:
+	case (int)EventInfo::EventType::TutoTask:
 		newEvent = new TutoTask();
 		break;
 	default:
@@ -104,7 +104,7 @@ TrackerEvent* Tracker::CreateNewEvent(int timeStamp, std::string idUser, std::st
 		break;
 	}
 
-	newEvent->setEv((EventType)eType);
+	newEvent->setEv((EventInfo::EventType)eType);
 	newEvent->setTimestamp(timeStamp);
 	newEvent->setIdUser(idUser);
 	newEvent->setIdGame(idGame);

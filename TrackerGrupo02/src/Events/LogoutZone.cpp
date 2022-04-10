@@ -1,4 +1,5 @@
 #include "LogoutZone.h"
+#include "jute.h"
 
 std::string LogoutZone::toJson()
 {

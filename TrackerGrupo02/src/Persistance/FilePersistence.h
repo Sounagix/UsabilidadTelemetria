@@ -1,7 +1,6 @@
 #pragma once
 #include "IPersistence.h"
 #include <queue>
-
 class TrackerEvent;
 class ISerializer;
 
@@ -26,6 +25,6 @@ public:
 	/// Vuelca los datos de la cola en el archivo
 	/// correspondiente
 	/// </summary>
-	virtual void flush();
+	virtual void flush(std::string pathFile);
 };
 

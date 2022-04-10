@@ -31,7 +31,7 @@ public:
 	/// Realiza el volcado de los datos que esten en la cola
 	/// </summary>
 	/// <returns></returns>
-	static bool End();
+	static bool End(std::string pathFile);
 	/// <summary>
 	/// Envia un evento nuevo al tracker
 	/// </summary>

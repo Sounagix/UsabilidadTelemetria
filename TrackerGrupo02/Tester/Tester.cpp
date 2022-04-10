@@ -16,7 +16,7 @@ int main()
 	std::cout << "Inicializacion completa\n";
 
 	// TrackerEvent de prueba - Es un bean asi que se setean los datos
-	OpenInv* openInv = (OpenInv*)(Tracker::CreateNewEvent(0, "a", "a", (int)EventType::OpenInv));
+	OpenInv* openInv = (OpenInv*)(Tracker::CreateNewEvent(0, "a", "a", (int)EventInfo::EventType::OpenInv));
 	openInv->setTimeOut(10);
 	openInv->setEquipPot(true);
 
@@ -24,7 +24,7 @@ int main()
 	instance->TrackEvent(openInv);
 
 	// Volcado de los datos
-	if (!instance->End()) {
+	if (!instance->End("./")) {
 		std::cout << "Error al realizar el volcado de los datos\n";
 		return -2;
 	}
