@@ -22,7 +22,7 @@ public:
 	};
 
 	//Esto en el EventInfo.h
-	static const int eventIndex[] ;
+	//static const int eventIndex[] ;
 
 	
 };

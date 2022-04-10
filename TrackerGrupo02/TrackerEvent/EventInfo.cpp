@@ -15,6 +15,7 @@ const char* EventInfo::enum_str[] =
 	"TutoTask"
 };
 
+/*
 // Esto en el EventInfo.cpp
 const int EventInfo::eventIndex[] =
 {
@@ -30,3 +31,4 @@ const int EventInfo::eventIndex[] =
 	0,	//UsePot
 	0   //TutoTask
 }
+*/

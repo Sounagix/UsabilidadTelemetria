@@ -13,8 +13,8 @@ void TrackerEvent::commonJson()
 	jute::jValue num(jute::jType::JNUMBER);
 	num.set_string(std::to_string((int)_timestamp));
 	mainJson.add_property("timestamp", num);
-	num.set_string(std::to_string((int)_event));
-	mainJson.add_property("eventType", num);
+	str.set_string(EventInfo::enum_str[(int)_event]);
+	mainJson.add_property("eventType", str);
 
 }
 

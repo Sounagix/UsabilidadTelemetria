@@ -2,6 +2,7 @@
 #include "JsonSerializer.h"
 #include "AllEvents.h"
 #include <iostream>
+#include <filesystem>
 
 bool FilePersistence::init(TypeOfFile type)
 {
@@ -37,16 +38,19 @@ void FilePersistence::flush(std::string pathFile)
 		TrackerEvent* e = _eventQueue.front();
 		std::string json = _serializer->serialize(e);
 		// TODO: Parsear al archivo de texto
-		
-		
-		std::string aux = pathFile + e->getEventName() + std::to_string(i);
-		if (std::ifstream(aux+".json").good())
+		//Path del directorio
+		std::string dir = pathFile + e->getEventName();
+		//Si no existe creamos el directorio
+		if (!std::filesystem::exists(dir))
 		{
-			i++;
-			aux = pathFile + e->getEventName() + std::to_string(i);
+			std::filesystem::create_directory(dir);
 		}
-		aux += ".json";
-		std::ofstream file(aux);
+		//Archivos creados en el directorio
+		int fileCount = std::distance(std::filesystem::directory_iterator(dir), std::filesystem::directory_iterator{});
+
+		std::string aux = dir +"/"+dir + std::to_string(fileCount);
+		
+		std::ofstream file( aux +".json");
 
 		file << json ;
 		file.close();
