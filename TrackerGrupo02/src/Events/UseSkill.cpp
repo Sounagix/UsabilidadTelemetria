@@ -2,7 +2,13 @@
 
 std::string UseSkill::toJson()
 {
-	return " ";
+	TrackerEvent::commonJson();
+
+	jute::jValue num(jute::jType::JNUMBER);
+	num.set_string(std::to_string((int)_zone));
+	mainJson.add_property("zone", num);
+
+	return mainJson.to_string();
 }
 
 void UseSkill::setZone(int zone)

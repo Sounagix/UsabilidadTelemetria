@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Events\AllEvents.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Events\Login.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -54,10 +51,13 @@
     <ClInclude Include="..\src\Events\UseSkill.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Events\jute.h">
+    <ClInclude Include="..\src\Resources\AllEvents.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Events\EventInfo.h">
+    <ClInclude Include="..\src\Resources\EventInfo.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Resources\jute.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -98,10 +98,10 @@
     <ClCompile Include="..\src\Events\Login.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Events\jute.cpp">
+    <ClCompile Include="..\src\Resources\EventInfo.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="EventInfo.cpp">
+    <ClCompile Include="..\src\Resources\jute.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

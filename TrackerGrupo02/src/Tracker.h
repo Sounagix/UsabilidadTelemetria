@@ -1,8 +1,8 @@
 #pragma once
-#include <list>
-#include <iostream>
 #include "ITrackerAsset.h"
 #include "IPersistence.h"
+#include <list>
+#include <iostream>
 
 enum class PersistenceType {
 	FILE = 0,
@@ -11,13 +11,12 @@ enum class PersistenceType {
 
 class TrackerEvent;
 
-
 class Tracker
 {
 private:
-	static Tracker* instance;
-	static IPersistence* persistenceObject;
-	static std::list<ITrackerAsset> activeTrackers;
+	static Tracker* _instance;
+	static IPersistence* _persistenceObject;
+	static std::list<ITrackerAsset> _activeTrackers;
 
 	Tracker();
 public:
@@ -26,12 +25,12 @@ public:
 	/// </summary>
 	/// <param name="iPersistence"></param>
 	/// <returns></returns>
-	static bool Init(PersistenceType persistType = PersistenceType::FILE, TypeOfFile fileType = TypeOfFile::Json);
+	static bool Init(PersistenceType persistType = PersistenceType::FILE, TypeOfFile fileType = TypeOfFile::Json, std::string pathFile = "");
 	/// <summary>
 	/// Realiza el volcado de los datos que esten en la cola
 	/// </summary>
 	/// <returns></returns>
-	static bool End(std::string pathFile);
+	static bool End();
 	/// <summary>
 	/// Envia un evento nuevo al tracker
 	/// </summary>
@@ -45,5 +44,9 @@ public:
 	/// Devuelve la instancia del tracker
 	/// </summary>
 	static Tracker* GetInstance();
+	/// <summary>
+	/// Limpia la basura del tracker
+	/// </summary>
+	static void Free();
 };
 

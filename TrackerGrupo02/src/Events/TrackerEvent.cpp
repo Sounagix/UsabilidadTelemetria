@@ -1,6 +1,5 @@
 #include "TrackerEvent.h"
 
-
 void TrackerEvent::commonJson()
 {
 	mainJson = (jute::jType::JOBJECT);
@@ -13,9 +12,8 @@ void TrackerEvent::commonJson()
 	jute::jValue num(jute::jType::JNUMBER);
 	num.set_string(std::to_string((int)_timestamp));
 	mainJson.add_property("timestamp", num);
-	str.set_string(EventInfo::enum_str[(int)_event]);
+	str.set_string(EventInfo::eventName[(int)_event]);
 	mainJson.add_property("eventType", str);
-
 }
 
 void TrackerEvent::setEv(EventInfo::EventType event)
@@ -38,7 +36,7 @@ void TrackerEvent::setTimestamp(int timeStamp)
 	_timestamp = timeStamp;
 }
 
-EventInfo::EventType TrackerEvent::getEvent()
+EventInfo::EventType TrackerEvent::getEventType()
 {
 	return _event;
 }

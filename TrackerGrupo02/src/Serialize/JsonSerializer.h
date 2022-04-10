@@ -3,7 +3,6 @@
 
 class JsonSerializer : public ISerializer
 {
-
 public:
 	virtual std::string serialize(TrackerEvent* eventToSer);
 };

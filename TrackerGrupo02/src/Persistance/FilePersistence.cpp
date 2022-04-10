@@ -3,6 +3,59 @@
 #include "AllEvents.h"
 #include <iostream>
 #include <filesystem>
+#include <iterator>
+
+bool FilePersistence::initEventCount()
+{
+	// ¿La ruta es correcta?
+	if (!std::filesystem::exists(_pathFile))
+	{
+		std::cout << "La ruta especificada no es correcta: " << _pathFile << std::endl;
+		return false;
+	}
+
+	// ¿Cuantos archivos de los eventos existen?
+	int numEvents = (int)EventInfo::EventType::NUM_EVENTS;
+	int i = 0;
+	while (i < numEvents)
+	{
+		std::string dir = _pathFile + EventInfo::eventName[i];
+		if (std::filesystem::exists(dir))
+		{
+			auto var1 = std::filesystem::directory_iterator(dir);
+			auto var2 = std::filesystem::directory_iterator{};
+			// Si no existe, se añade
+			int count = std::distance(var1, var2);
+			_eventCount[(EventInfo::EventType)i] = count;
+		}
+
+		i++;
+	}
+
+	return true;
+}
+
+FilePersistence::FilePersistence(std::string pathFile) : _pathFile(pathFile)
+{
+}
+
+FilePersistence::~FilePersistence()
+{
+
+	while (!_eventQueue.empty()) {
+		auto e = _eventQueue.front();
+		_eventQueue.pop();
+
+		delete e;
+		e = nullptr;
+	}
+
+	if (_serializer != nullptr)
+	{
+		delete _serializer;
+		_serializer = nullptr;
+	}
+}
 
 bool FilePersistence::init(TypeOfFile type)
 {
@@ -12,15 +65,15 @@ bool FilePersistence::init(TypeOfFile type)
 		_serializer = new JsonSerializer();
 		break;
 	case TypeOfFile::Csv:
-		std::cout << "Sigan viendo...\n";
+		std::cout << "CSV no sportado. WIP\n";
+		return false;
 		break;
 	default:
 		std::cout << "Formato no reconocido...\n";
 		return false;
 		break;
 	}
-
-	return true;
+	return initEventCount();
 }
 
 void FilePersistence::send(TrackerEvent* trackEvent)
@@ -28,33 +81,44 @@ void FilePersistence::send(TrackerEvent* trackEvent)
 	_eventQueue.push(trackEvent);
 }
 
-void FilePersistence::flush(std::string pathFile)
+void FilePersistence::flush()
 {
-	// TODO: Decirle al Serialize que serialice los datos del TrackerEvent
-	// para posteriormente recogerlos y crear el archivo Json
-	int i = 0;
+	// Limpieza d ela cola
 	while (!_eventQueue.empty())
 	{
 		TrackerEvent* e = _eventQueue.front();
+		EventInfo::EventType eType = e->getEventType();
 		std::string json = _serializer->serialize(e);
-		// TODO: Parsear al archivo de texto
-		//Path del directorio
-		std::string dir = pathFile + e->getEventName();
-		//Si no existe creamos el directorio
-		if (!std::filesystem::exists(dir))
+		// 1. ¿Existe la carpeta destino?
+		std::string dirPath = _pathFile + EventInfo::eventName[(int)eType];
+		if (!std::filesystem::exists(dirPath))
 		{
-			std::filesystem::create_directory(dir);
+			//Si no existe creamos el directorio
+			std::filesystem::create_directory(dirPath);
 		}
-		//Archivos creados en el directorio
-		int fileCount = std::distance(std::filesystem::directory_iterator(dir), std::filesystem::directory_iterator{});
 
-		std::string aux = dir +"/"+dir + std::to_string(fileCount);
-		
-		std::ofstream file( aux +".json");
+		//2. ¿El diccionario contiene info del evento?
+		int fileCount = 0;
+		if (_eventCount.count(eType) == 0)
+		{
+			// Si no existe, se añade
+			_eventCount[eType] = 0;
+		}
+		else
+		{
+			// Si existe, aumenta el conteo
+			_eventCount.at(eType)++;
+			fileCount = _eventCount.at(eType);
+		}
+		// 3. Asignacion del nombre
+		std::string aux = dirPath + "/" + dirPath + std::to_string(fileCount);
 
-		file << json ;
+		// 4. Volcado de los datos
+		std::ofstream file(aux + ".json");
+		file << json;
 		file.close();
-		
+
+		// 5. Limpieza 
 		_eventQueue.pop();
 		delete e;
 		e = nullptr;

@@ -1,8 +1,10 @@
 #pragma once
+#include <string>
+
 class EventInfo
 {
 public:
-	static const char* enum_str[];
+	static const char* eventName[];
 
 	enum class EventType : int
 	{
@@ -18,12 +20,8 @@ public:
 		UsePot = 9,
 		TutoTask = 10,
 
+		NUM_EVENTS = 11,
 		NONE = 100
 	};
-
-	//Esto en el EventInfo.h
-	//static const int eventIndex[] ;
-
-	
 };
 

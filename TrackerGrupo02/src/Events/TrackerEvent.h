@@ -23,7 +23,7 @@ public:
 	void setTimestamp(int timeStamp);
 
 	//-------------------GET---------------//
-	EventInfo::EventType getEvent();
+	EventInfo::EventType getEventType();
 	std::string getIdUser();
 	std::string getIdGame();
 	int getTimeStamp();
@@ -31,10 +31,10 @@ public:
 	//-------------------OTHER---------------//
 	virtual std::string toJson() { return ""; };
 	
-	std::string getEventName()
-	{
-		if (_event == EventInfo::EventType::NONE)return "NONE";
-		return std::string(EventInfo::enum_str[(int)_event]);
-	}
+	//std::string getEventName()
+	//{
+	//	if (_event == EventInfo::EventType::NONE)return "NONE";
+	//	return std::string(EventInfo::eventName[(int)_event]);
+	//}
 };
 

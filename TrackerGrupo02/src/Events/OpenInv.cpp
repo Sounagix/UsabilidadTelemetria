@@ -14,7 +14,6 @@ std::string OpenInv::toJson()
 	mainJson.add_property("equipPot", booolean);
 
 	return mainJson.to_string();
-	
 }
 
 OpenInv::OpenInv() :TrackerEvent() {}

@@ -1,5 +1,5 @@
 #pragma once
-#include <iostream>
+#include <string>
 class TrackerEvent;
 
 enum class TypeOfFile {
@@ -27,5 +27,5 @@ public:
 	/// Vuelca los datos de la cola en el archivo
 	/// correspondiente
 	/// </summary>
-	virtual void flush(std::string pathFile) = 0;
+	virtual void flush() = 0;
 };
