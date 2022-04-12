@@ -2,7 +2,8 @@
 
 std::string OpenShop::toJson()
 {
-	return " ";
+	TrackerEvent::commonJson();
+	return mainJson.to_string();
 }
 
 OpenShop::OpenShop() :TrackerEvent() {}

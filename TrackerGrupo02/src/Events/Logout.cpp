@@ -3,7 +3,8 @@
 
 std::string Logout::toJson()
 {
-	return " ";
+	TrackerEvent::commonJson();
+	return mainJson.to_string();
 }
 
 Logout::Logout() : TrackerEvent() {}

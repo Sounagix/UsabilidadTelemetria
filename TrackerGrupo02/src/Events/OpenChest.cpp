@@ -2,7 +2,13 @@
 
 std::string OpenChest::toJson()
 {
-	return " ";
+	TrackerEvent::commonJson();
+
+	jute::jValue num(jute::jType::JBOOLEAN);
+	num.set_string(std::to_string((bool)_openInv));
+	mainJson.add_property("openInv", num);
+
+	return mainJson.to_string();
 }
 
 void OpenChest::setOpenInv(bool openInv)

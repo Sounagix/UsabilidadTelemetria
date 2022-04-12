@@ -1,7 +1,8 @@
 #include "Login.h"
 std::string Login::toJson()
 {
-	return "";
+	TrackerEvent::commonJson();
+	return mainJson.to_string();
 }
 
 Login::Login() :TrackerEvent() {}

@@ -2,7 +2,8 @@
 
 std::string UsePot::toJson()
 {
-	return " ";
+	TrackerEvent::commonJson();
+	return mainJson.to_string();
 }
 
 UsePot::UsePot() :TrackerEvent() {}

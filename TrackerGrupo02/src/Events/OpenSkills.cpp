@@ -2,7 +2,15 @@
 
 std::string OpenSkills::toJson()
 {
-	return " ";
+	TrackerEvent::commonJson();
+
+	jute::jValue num(jute::jType::JBOOLEAN);
+	num.set_string(std::to_string((bool)_points));
+	mainJson.add_property("points", num);
+
+	
+
+	return mainJson.to_string();
 }
 
 OpenSkills::OpenSkills() :TrackerEvent() {}
