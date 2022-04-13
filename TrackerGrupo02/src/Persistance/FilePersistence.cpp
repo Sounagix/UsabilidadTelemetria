@@ -37,6 +37,11 @@ bool FilePersistence::initEventCount()
 
 FilePersistence::FilePersistence(std::string pathFile) : _pathFile(pathFile)
 {
+	_pathFile = pathFile;
+	if (_pathFile[_pathFile.length() - 1] != '\\' && _pathFile[_pathFile.length() - 1] != '/') 
+	{
+		_pathFile += '/';
+	}
 }
 
 FilePersistence::~FilePersistence()
@@ -111,7 +116,7 @@ void FilePersistence::flush()
 			fileCount = _eventCount.at(eType);
 		}
 		// 3. Asignacion del nombre
-		std::string aux = dirPath + "/" + dirPath + std::to_string(fileCount);
+		std::string aux = dirPath + "/" + EventInfo::eventName[(int)eType] + std::to_string(fileCount);
 
 		// 4. Volcado de los datos
 		std::ofstream file(aux + ".json");
