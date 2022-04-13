@@ -10,7 +10,7 @@ Tracker::Tracker() {}
 
 bool Tracker::Init(PersistenceType persistType, TypeOfFile fileType, std::string pathFile)
 {
-	if (_persistenceObject != nullptr) {
+	if (_instance->_persistenceObject != nullptr) {
 		std::cout << "El Tracker ya se ha inicializado...\n";
 		return false;
 	}
@@ -18,7 +18,7 @@ bool Tracker::Init(PersistenceType persistType, TypeOfFile fileType, std::string
 	switch (persistType)
 	{
 	case PersistenceType::FILE:
-		_persistenceObject = new FilePersistence(pathFile);
+		_instance->_persistenceObject = new FilePersistence(pathFile);
 		break;
 	case PersistenceType::SERVER:
 		// TODO: Crearlo de forma SERVER
@@ -31,7 +31,7 @@ bool Tracker::Init(PersistenceType persistType, TypeOfFile fileType, std::string
 		break;
 	}
 
-	return _persistenceObject->init(fileType);
+	return _instance->_persistenceObject->init(fileType);
 }
 
 bool Tracker::End()
@@ -40,8 +40,8 @@ bool Tracker::End()
 	// esto solo seria necesario si hacemos trackers 
 	// especializados
 	try {
-		std::cout << "Volcado los datos...\n";
-		_persistenceObject->flush();
+		std::cout << "Volcando los datos...\n";
+		_instance->_persistenceObject->flush();
 	}
 	catch (std::exception e) {
 		std::cout << "Error al realizar el volcado de los datos:\n" << e.what() << std::endl;
@@ -56,7 +56,7 @@ void Tracker::TrackEvent(TrackerEvent* newEvent)
 	// TODO: Comprobacion sobre si el evento esta activado
 	// esto solo seria necesario si hacemos trackers 
 	// especializados
-	_persistenceObject->send(newEvent);
+	_instance->_persistenceObject->send(newEvent);
 }
 
 TrackerEvent* Tracker::CreateNewEvent(int timeStamp, std::string idUser, std::string idGame, int eType)
@@ -123,6 +123,6 @@ Tracker* Tracker::GetInstance()
 
 void Tracker::Free() 
 {
-	delete _persistenceObject;
+	delete _instance->_persistenceObject;
 	delete _instance;
 }
