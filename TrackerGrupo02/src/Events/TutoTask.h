@@ -11,6 +11,7 @@ public:
 	TutoTask();
 
 	void setName(std::string name);
+	void setTimeOut(int t);
 	std::string getName();
 };
 

@@ -21,6 +21,11 @@ void TutoTask::setName(std::string name)
 	_name = name;
 }
 
+void TutoTask::setTimeOut(int t)
+{
+	_timeOut = t;
+}
+
 std::string TutoTask::getName()
 {
 	return _name;
