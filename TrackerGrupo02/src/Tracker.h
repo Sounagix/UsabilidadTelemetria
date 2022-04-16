@@ -49,7 +49,7 @@ public:
 	/// </summary>
 	static void Free();
 	/// <summary>
-	/// Calcula el timeStamp y lo devuelve como int
+	/// Devuelve el timeStamp actual
 	/// </summary>
 	static long long GetTimeStamp();
 };

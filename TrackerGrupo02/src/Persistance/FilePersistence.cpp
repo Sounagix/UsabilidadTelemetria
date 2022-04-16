@@ -89,7 +89,7 @@ void FilePersistence::send(TrackerEvent* trackEvent)
 
 void FilePersistence::flush()
 {
-	// Limpieza d ela cola
+	// Limpieza de la cola
 	while (!_eventQueue.empty())
 	{
 		TrackerEvent* e = _eventQueue.front();

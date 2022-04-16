@@ -37,15 +37,17 @@ bool Tracker::Init(PersistenceType persistType, TypeOfFile fileType, std::string
 
 bool Tracker::End()
 {
-	// TODO: Comprobacion sobre si el evento esta activado
-	// esto solo seria necesario si hacemos trackers 
-	// especializados
+	if (_instance == nullptr) {
+		std::cout << "Error al querer volcar datos: Instancia no inicializada\n" << std::endl;
+		return false;
+	}
+
+	std::cout << "Volcando los datos...\n";
 	try {
-		std::cout << "Volcando los datos...\n";
 		_instance->_persistenceObject->flush();
 	}
 	catch (std::exception e) {
-		std::cout << "Error al realizar el volcado de los datos:\n" << e.what() << std::endl;
+		std::cout << "Error volcando los datos:\n" << e.what() << std::endl;
 		return false;
 	}
 
@@ -54,6 +56,11 @@ bool Tracker::End()
 
 void Tracker::TrackEvent(TrackerEvent* newEvent)
 {
+	if (_instance == nullptr) {
+		std::cout << "Error en el envío de datos: Instancia no inicializada\n" << std::endl;
+		return;
+	}
+
 	// TODO: Comprobacion sobre si el evento esta activado
 	// esto solo seria necesario si hacemos trackers 
 	// especializados
@@ -122,11 +129,14 @@ Tracker* Tracker::GetInstance()
 	return _instance;
 }
 
-void Tracker::Free() 
+void Tracker::Free()
 {
-	if (_instance->_persistenceObject) {
-		delete _instance->_persistenceObject;
+	if (_instance == nullptr) {
+		std::cout << "No se puede eliminar una instancia sin inicializar\n";
+		return;
 	}
+
+	delete _instance->_persistenceObject;
 	delete _instance;
 }
 
