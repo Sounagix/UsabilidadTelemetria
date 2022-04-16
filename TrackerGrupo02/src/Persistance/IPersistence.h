@@ -12,6 +12,7 @@ enum class TypeOfFile {
 class IPersistence
 {
 public: 
+	virtual ~IPersistence() {};
 	/// <summary>
 	/// Inicializa la persistencia
 	/// </summary>

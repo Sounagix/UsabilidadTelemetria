@@ -9,10 +9,12 @@
 
 int main()
 {
+	setlocale(LC_ALL, "");
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Check Memory Leaks
+
 	Tracker* _instance = Tracker::GetInstance();
 	if (!_instance->Init(PersistenceType::FILE, TypeOfFile::Json, PATH_FILE)) {
 		std::cout << "Error al inicializar el tracker\n";
-		Tracker::Free();
 		return -1;
 	}
 
@@ -42,7 +44,7 @@ int main()
 		return -2;
 	}
 
-	try 
+	try
 	{
 		Tracker::Free();
 	}

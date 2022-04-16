@@ -34,7 +34,7 @@ private:
 
 public:
 	FilePersistence(std::string pathFile);
-	~FilePersistence();
+	virtual ~FilePersistence();
 	/// <summary>
 	/// Inicializa el metodo de persistencia
 	/// </summary>

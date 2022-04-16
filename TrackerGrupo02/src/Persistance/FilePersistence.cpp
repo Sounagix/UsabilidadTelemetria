@@ -78,6 +78,7 @@ bool FilePersistence::init(TypeOfFile type)
 		return false;
 		break;
 	}
+
 	return initEventCount();
 }
 

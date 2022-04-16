@@ -123,6 +123,8 @@ Tracker* Tracker::GetInstance()
 
 void Tracker::Free() 
 {
-	delete _instance->_persistenceObject;
+	if (_instance->_persistenceObject) {
+		delete _instance->_persistenceObject;
+	}
 	delete _instance;
 }
