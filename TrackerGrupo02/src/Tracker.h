@@ -48,5 +48,10 @@ public:
 	/// Limpia la basura del tracker
 	/// </summary>
 	static void Free();
+	/// <summary>
+	/// Calcula el timeStamp y lo devuelve como int
+	/// </summary>
+	/// <returns></returns>
+	static int GetTimeStamp();
 };
 

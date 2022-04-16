@@ -1,6 +1,7 @@
 #include "Tracker.h"
 #include "AllEvents.h"
 #include "FilePersistence.h"
+#include <chrono>
 
 Tracker* Tracker::_instance;
 IPersistence* Tracker::_persistenceObject;
@@ -127,4 +128,10 @@ void Tracker::Free()
 		delete _instance->_persistenceObject;
 	}
 	delete _instance;
+}
+
+int Tracker::GetTimeStamp()
+{
+	return std::chrono::duration_cast<std::chrono::seconds>(
+		std::chrono::system_clock::now().time_since_epoch()).count();;
 }
