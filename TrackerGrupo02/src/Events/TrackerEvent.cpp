@@ -10,7 +10,7 @@ void TrackerEvent::commonJson()
 	mainJson.add_property("idGame", str);
 
 	jute::jValue num(jute::jType::JNUMBER);
-	num.set_string(std::to_string((int)_timestamp));
+	num.set_string(std::to_string((long long)_timestamp));
 	mainJson.add_property("timestamp", num);
 	str.set_string(EventInfo::eventName[(int)_event]);
 	mainJson.add_property("eventType", str);
@@ -31,7 +31,7 @@ void TrackerEvent::setIdGame(std::string id)
 	_idGame = id;
 }
 
-void TrackerEvent::setTimestamp(int timeStamp)
+void TrackerEvent::setTimestamp(long long timeStamp)
 {
 	_timestamp = timeStamp;
 }
@@ -51,7 +51,7 @@ std::string TrackerEvent::getIdGame()
 	return _idGame;
 }
 
-int TrackerEvent::getTimeStamp()
+long long TrackerEvent::getTimeStamp()
 {
 	return _timestamp;
 }

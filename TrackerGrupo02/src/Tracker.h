@@ -39,7 +39,7 @@ public:
 	/// <summary>
 	/// Factoria de eventos
 	/// </summary>
-	static TrackerEvent* CreateNewEvent(int timeStamp, std::string idUser, std::string idGame, int eType);
+	static TrackerEvent* CreateNewEvent(long long timeStamp, std::string idUser, std::string idGame, int eType);
 	/// <summary>
 	/// Devuelve la instancia del tracker
 	/// </summary>
@@ -51,7 +51,6 @@ public:
 	/// <summary>
 	/// Calcula el timeStamp y lo devuelve como int
 	/// </summary>
-	/// <returns></returns>
-	static int GetTimeStamp();
+	static long long GetTimeStamp();
 };
 

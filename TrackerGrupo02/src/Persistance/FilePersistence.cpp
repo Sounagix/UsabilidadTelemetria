@@ -25,7 +25,7 @@ bool FilePersistence::initEventCount()
 			auto var1 = std::filesystem::directory_iterator(dir);
 			auto var2 = std::filesystem::directory_iterator{};
 			// Si no existe, se añade
-			int count = std::distance(var1, var2);
+			long long count = std::distance(var1, var2);
 			_eventCount[(EventInfo::EventType)i] = count;
 		}
 
@@ -104,7 +104,7 @@ void FilePersistence::flush()
 		}
 
 		//2. ¿El diccionario contiene info del evento?
-		int fileCount = 0;
+		long long fileCount = 0;
 		if (_eventCount.count(eType) == 0)
 		{
 			// Si no existe, se añade

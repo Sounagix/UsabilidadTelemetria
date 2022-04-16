@@ -8,8 +8,6 @@ std::string OpenSkills::toJson()
 	num.set_string(std::to_string((bool)_points));
 	mainJson.add_property("points", num);
 
-	
-
 	return mainJson.to_string();
 }
 

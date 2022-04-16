@@ -60,7 +60,7 @@ void Tracker::TrackEvent(TrackerEvent* newEvent)
 	_instance->_persistenceObject->send(newEvent);
 }
 
-TrackerEvent* Tracker::CreateNewEvent(int timeStamp, std::string idUser, std::string idGame, int eType)
+TrackerEvent* Tracker::CreateNewEvent(long long timeStamp, std::string idUser, std::string idGame, int eType)
 {
 	TrackerEvent* newEvent;
 
@@ -130,7 +130,7 @@ void Tracker::Free()
 	delete _instance;
 }
 
-int Tracker::GetTimeStamp()
+long long Tracker::GetTimeStamp()
 {
 	return std::chrono::duration_cast<std::chrono::seconds>(
 		std::chrono::system_clock::now().time_since_epoch()).count();;

@@ -25,7 +25,7 @@ private:
 	/// Diccionario que contiene el numero de eventos
 	/// creados en el directorio destino para cada evento
 	/// </summary>
-	std::map<EventInfo::EventType, int> _eventCount;
+	std::map<EventInfo::EventType, long long> _eventCount;
 	/// <summary>
 	/// Inicialk
 	/// </summary>

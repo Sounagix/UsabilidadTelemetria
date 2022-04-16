@@ -9,7 +9,7 @@ protected:
 	EventInfo::EventType _event = EventInfo::EventType::NONE;
 	std::string _idUser = "none";
 	std::string _idGame = "none";
-	int _timestamp = 0;
+	long long _timestamp = 0;
 	jute::jValue mainJson;
 	TrackerEvent() {};
 	virtual void commonJson();
@@ -20,13 +20,13 @@ public:
 	void setEv(EventInfo::EventType event);
 	void setIdUser(std::string id);
 	void setIdGame(std::string id);
-	void setTimestamp(int timeStamp);
+	void setTimestamp(long long timeStamp);
 
 	//-------------------GET---------------//
 	EventInfo::EventType getEventType();
 	std::string getIdUser();
 	std::string getIdGame();
-	int getTimeStamp();
+	long long getTimeStamp();
 
 	//-------------------OTHER---------------//
 	virtual std::string toJson() { return ""; };

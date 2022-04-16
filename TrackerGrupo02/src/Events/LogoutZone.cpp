@@ -14,7 +14,6 @@ std::string LogoutZone::toJson()
 	mainJson.add_property("next", aux);
 
 	return mainJson.to_string();
-
 }
 
 LogoutZone::LogoutZone() : TrackerEvent()

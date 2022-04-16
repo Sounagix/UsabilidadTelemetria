@@ -4,7 +4,6 @@ std::string TutoTask::toJson()
 {
 	TrackerEvent::commonJson();
 
-
 	jute::jValue aux(jute::jType::JSTRING);
 	aux.set_string(_name);
 	mainJson.add_property("name", aux);
@@ -21,7 +20,7 @@ void TutoTask::setName(std::string name)
 	_name = name;
 }
 
-void TutoTask::setTimeOut(int t)
+void TutoTask::setTimeOut(long long t)
 {
 	_timeOut = t;
 }

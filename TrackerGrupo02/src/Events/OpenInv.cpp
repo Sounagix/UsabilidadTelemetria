@@ -18,7 +18,7 @@ std::string OpenInv::toJson()
 
 OpenInv::OpenInv() :TrackerEvent() {}
 
-void OpenInv::setTimeOut(int timeOut)
+void OpenInv::setTimeOut(long long timeOut)
 {
 	_timeOut = timeOut;
 }
@@ -28,7 +28,7 @@ void OpenInv::setEquipPot(bool equipPot)
 	_equipPot = equipPot;
 }
 
-int OpenInv::getTimeOut()
+long long OpenInv::getTimeOut()
 {
 	return _timeOut;
 }

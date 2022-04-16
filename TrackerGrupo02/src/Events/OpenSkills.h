@@ -4,7 +4,7 @@
 class OpenSkills : public TrackerEvent
 {
 private:
-	bool _points;
+	bool _points = false;
 public:
 	std::string toJson();
 	OpenSkills();
