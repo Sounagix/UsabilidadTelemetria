@@ -19,14 +19,8 @@
     <Filter Include="Archivos de origen\Persistance">
       <UniqueIdentifier>{38fb1e54-c82b-46a6-8019-e96a45c7d177}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de origen\TrackerAsset">
-      <UniqueIdentifier>{3411086c-3281-4826-b6b7-60795c62049b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de encabezado\Persistance">
       <UniqueIdentifier>{97f8d1e3-71ea-4fb9-bc34-bb7ff0b4735f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\TrackerAsset">
-      <UniqueIdentifier>{78f28af9-fa49-48b9-b999-d67ff501b9ac}</UniqueIdentifier>
     </Filter>
     <Filter Include="Archivos de encabezado\Serialize">
       <UniqueIdentifier>{cacac4d7-290a-4bcd-807c-2d67dfa8ea3b}</UniqueIdentifier>
@@ -38,9 +32,6 @@
     </ClCompile>
     <ClCompile Include="..\src\Persistance\IPersistence.cpp">
       <Filter>Archivos de origen\Persistance</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TrackerAsset\ITrackerAsset.cpp">
-      <Filter>Archivos de origen\TrackerAsset</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Persistance\FilePersistence.cpp">
       <Filter>Archivos de origen\Persistance</Filter>
@@ -58,9 +49,6 @@
     </ClInclude>
     <ClInclude Include="..\src\Persistance\IPersistence.h">
       <Filter>Archivos de encabezado\Persistance</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TrackerAsset\ITrackerAsset.h">
-      <Filter>Archivos de encabezado\TrackerAsset</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Persistance\FilePersistence.h">
       <Filter>Archivos de encabezado\Persistance</Filter>

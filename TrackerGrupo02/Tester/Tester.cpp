@@ -11,7 +11,6 @@ int main()
 {
 	setlocale(LC_ALL, "");
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Check Memory Leaks
-	Tracker::End();
 
 	Tracker* _instance = Tracker::GetInstance();
 	if (!_instance->Init(PersistenceType::FILE, TypeOfFile::Json, PATH_FILE)) {
@@ -20,6 +19,8 @@ int main()
 	}
 
 	std::cout << "Inicializacion completa\n";
+
+	_instance->SetBitMaskEvents("11110111111");
 
 	// TrackerEvents de prueba
 	// Envio del evento

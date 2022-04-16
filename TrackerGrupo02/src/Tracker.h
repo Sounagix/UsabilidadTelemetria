@@ -1,8 +1,9 @@
 #pragma once
-#include "ITrackerAsset.h"
 #include "IPersistence.h"
+#include "EventInfo.h"
 #include <list>
 #include <iostream>
+#include <bitset>
 
 enum class PersistenceType {
 	FILE = 0,
@@ -16,9 +17,12 @@ class Tracker
 private:
 	static Tracker* _instance;
 	static IPersistence* _persistenceObject;
-	static std::list<ITrackerAsset> _activeTrackers;
+	static std::bitset<(uint64_t)EventInfo::EventType::NUM_EVENTS> _bitMaskEvents;
 
 	Tracker();
+
+	static void DefaultBitMask();
+
 public:
 	/// <summary>
 	/// Inicializa el singleton del Tracker
@@ -41,16 +45,21 @@ public:
 	/// </summary>
 	static TrackerEvent* CreateNewEvent(long long timeStamp, std::string idUser, std::string idGame, int eType);
 	/// <summary>
-	/// Devuelve la instancia del tracker
-	/// </summary>
-	static Tracker* GetInstance();
-	/// <summary>
 	/// Limpia la basura del tracker
 	/// </summary>
 	static void Free();
 	/// <summary>
+	/// Devuelve la instancia del tracker
+	/// </summary>
+	static Tracker* GetInstance();
+	/// <summary>
 	/// Devuelve el timeStamp actual
 	/// </summary>
 	static long long GetTimeStamp();
+	/// <summary>
+	/// Asigna una nueva máscara de bits para los eventos
+	/// </summary>
+	/// <param name="bits">Máscara de bits recibida</param>
+	/// <param name="flip">Determina si se invierte el orden de la máscara de bits</param>
+	static void SetBitMaskEvents(const std::string bits, bool flip = true);
 };
-
