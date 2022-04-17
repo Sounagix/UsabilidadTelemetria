@@ -8,7 +8,7 @@ class TrackerEvent
 protected:
 	EventInfo::EventType _event = EventInfo::EventType::NONE;
 	std::string _idUser = "none";
-	std::string _idGame = "none";
+	std::string _idSesion = "none";
 	long long _timestamp = 0;
 	jute::jValue mainJson;
 	TrackerEvent() {};
@@ -19,7 +19,7 @@ public:
 	//-------------------SET---------------//
 	void setEv(EventInfo::EventType event);
 	void setIdUser(std::string id);
-	void setIdGame(std::string id);
+	void setIdSesion(std::string id);
 	void setTimestamp(long long timeStamp);
 
 	//-------------------GET---------------//

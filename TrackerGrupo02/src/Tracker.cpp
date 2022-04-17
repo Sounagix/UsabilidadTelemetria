@@ -50,8 +50,9 @@ bool Tracker::End()
 		std::cout << "Error al querer volcar datos: Instancia no inicializada\n" << std::endl;
 		return false;
 	}
-
+#ifdef DEBUG
 	std::cout << "Volcando los datos...\n";
+#endif
 	try {
 		_instance->_persistenceObject->flush();
 	}
@@ -79,7 +80,7 @@ void Tracker::TrackEvent(TrackerEvent* newEvent)
 	}
 }
 
-TrackerEvent* Tracker::CreateNewEvent(long long timeStamp, std::string idUser, std::string idGame, int eType)
+TrackerEvent* Tracker::CreateNewEvent(long long timeStamp, std::string idUser, std::string idSesion, int eType)
 {
 	TrackerEvent* newEvent;
 
@@ -127,7 +128,7 @@ TrackerEvent* Tracker::CreateNewEvent(long long timeStamp, std::string idUser, s
 	newEvent->setEv((EventInfo::EventType)eType);
 	newEvent->setTimestamp(timeStamp);
 	newEvent->setIdUser(idUser);
-	newEvent->setIdGame(idGame);
+	newEvent->setIdSesion(idSesion);
 
 	return newEvent;
 }

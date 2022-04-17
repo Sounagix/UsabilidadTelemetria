@@ -6,8 +6,8 @@ void TrackerEvent::commonJson()
 	jute::jValue str(jute::jType::JSTRING);
 	str.set_string(_idUser);
 	mainJson.add_property("idUser", str);
-	str.set_string(_idGame);
-	mainJson.add_property("idGame", str);
+	str.set_string(_idSesion);
+	mainJson.add_property("idSesion", str);
 
 	jute::jValue num(jute::jType::JNUMBER);
 	num.set_string(std::to_string((long long)_timestamp));
@@ -26,9 +26,9 @@ void TrackerEvent::setIdUser(std::string id)
 	_idUser = id;
 }
 
-void TrackerEvent::setIdGame(std::string id)
+void TrackerEvent::setIdSesion(std::string id)
 {
-	_idGame = id;
+	_idSesion = id;
 }
 
 void TrackerEvent::setTimestamp(long long timeStamp)
@@ -48,7 +48,7 @@ std::string TrackerEvent::getIdUser()
 
 std::string TrackerEvent::getIdGame()
 {
-	return _idGame;
+	return _idSesion;
 }
 
 long long TrackerEvent::getTimeStamp()

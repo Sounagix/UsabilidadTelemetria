@@ -43,7 +43,7 @@ public:
 	/// <summary>
 	/// Factoria de eventos
 	/// </summary>
-	static TrackerEvent* CreateNewEvent(long long timeStamp, std::string idUser, std::string idGame, int eType);
+	static TrackerEvent* CreateNewEvent(long long timeStamp, std::string idUser, std::string idSesion, int eType);
 	/// <summary>
 	/// Limpia la basura del tracker
 	/// </summary>
